@@ -1,7 +1,86 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title description">
   <title id="title">Liyuan Shi cyberpunk profile banner</title>
-  <desc id="description">A dark neon-pink banner for an electronic information engineering student focused on embedded systems and AI.</desc>
+  <desc id="description">A dark neon-pink banner with subtle chip, waveform, circuit-node, and scan-line motion for an electronic information engineering student focused on embedded systems and AI.</desc>
   <defs>
+    <style>
+      .scan-line {
+        display: none;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .chip-shell {
+          animation: chip-breathe 4s ease-in-out infinite;
+        }
+
+        .waveform {
+          stroke-dasharray: 100;
+          stroke-dashoffset: 100;
+          animation: wave-draw 3.2s ease-in-out infinite;
+        }
+
+        .scan-line {
+          display: inline;
+          animation: scan-line 9s linear infinite;
+        }
+
+        .top-node {
+          animation: top-node-travel 6s linear infinite;
+        }
+
+        .bottom-node {
+          animation: bottom-node-travel 7s linear -2.2s infinite;
+        }
+      }
+
+      @keyframes chip-breathe {
+        0%, 100% {
+          opacity: 0.82;
+          filter: drop-shadow(0 0 2px rgba(255, 46, 154, 0.35));
+        }
+        50% {
+          opacity: 1;
+          filter: drop-shadow(0 0 9px rgba(255, 46, 154, 0.85));
+        }
+      }
+
+      @keyframes wave-draw {
+        0% { stroke-dashoffset: 100; opacity: 0; }
+        12% { opacity: 1; }
+        72%, 88% { stroke-dashoffset: 0; opacity: 1; }
+        100% { stroke-dashoffset: -100; opacity: 0; }
+      }
+
+      @keyframes scan-line {
+        0% { transform: translateY(-24px); opacity: 0; }
+        10% { opacity: 0.04; }
+        50% { opacity: 0.12; }
+        90% { opacity: 0.04; }
+        100% { transform: translateY(468px); opacity: 0; }
+      }
+
+      @keyframes top-node-travel {
+        0% { transform: translate(-75px, 0); opacity: 0; }
+        8%, 27% { transform: translate(0, 0); opacity: 1; }
+        38% { transform: translate(30px, -30px); opacity: 1; }
+        92% { transform: translate(185px, -30px); opacity: 1; }
+        100% { transform: translate(205px, -30px); opacity: 0; }
+      }
+
+      @keyframes bottom-node-travel {
+        0% { transform: translate(235px, 40px); opacity: 0; }
+        8%, 62% { transform: translate(40px, 40px); opacity: 1; }
+        75% { transform: translate(0, 0); opacity: 1; }
+        92% { transform: translate(-65px, 0); opacity: 1; }
+        100% { transform: translate(-85px, 0); opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .chip-shell { animation: none; opacity: 1; }
+        .waveform { animation: none; stroke-dashoffset: 0; opacity: 1; }
+        .scan-line { display: none; }
+        .top-node, .bottom-node { animation: none; opacity: 1; }
+      }
+    </style>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#070812"/>
       <stop offset="0.55" stop-color="#0D1020"/>
@@ -10,6 +89,12 @@
     <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#FF2E9A"/>
       <stop offset="1" stop-color="#9D4EDD"/>
+    </linearGradient>
+    <linearGradient id="scan-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF2E9A" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#FF2E9A"/>
+      <stop offset="0.65" stop-color="#9D4EDD"/>
+      <stop offset="1" stop-color="#9D4EDD" stop-opacity="0"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FF2E9A" stroke-opacity="0.09" stroke-width="1"/>
@@ -23,12 +108,13 @@
     </filter>
   </defs>
   <rect width="1200" height="420" rx="24" fill="url(#background)"/>
+  <rect class="scan-line" x="0" y="-24" width="1200" height="24" fill="url(#scan-gradient)" opacity="0"/>
   <rect width="1200" height="420" rx="24" fill="url(#grid)"/>
   <rect x="1.5" y="1.5" width="1197" height="417" rx="22.5" fill="none" stroke="url(#neon)" stroke-width="3"/>
   <path d="M760 92 H835 L865 62 H1040" fill="none" stroke="#FF2E9A" stroke-opacity="0.45" stroke-width="2"/>
   <path d="M760 328 H845 L885 368 H1080" fill="none" stroke="#9D4EDD" stroke-opacity="0.45" stroke-width="2"/>
-  <circle cx="835" cy="92" r="5" fill="#FF2E9A"/>
-  <circle cx="845" cy="328" r="5" fill="#9D4EDD"/>
+  <circle class="top-node" cx="835" cy="92" r="5" fill="#FF2E9A"/>
+  <circle class="bottom-node" cx="845" cy="328" r="5" fill="#9D4EDD"/>
   <g font-family="Segoe UI, Arial, sans-serif">
     <text x="72" y="88" fill="#94A3B8" font-size="18" font-weight="600" letter-spacing="7">HELLO, WORLD — I'M</text>
     <text x="68" y="177" fill="#FF2E9A" font-size="72" font-weight="800" letter-spacing="4" filter="url(#glow)">LIYUAN SHI</text>
@@ -38,14 +124,16 @@
     <text x="72" y="366" fill="#9D4EDD" font-size="14" font-weight="700" letter-spacing="5">LEARNING · BUILDING · EXPLORING</text>
   </g>
   <g transform="translate(910 150)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="0" y="0" width="150" height="150" rx="26" stroke="#FF2E9A" stroke-width="4" filter="url(#glow)"/>
-    <rect x="29" y="29" width="92" height="92" rx="14" stroke="#9D4EDD" stroke-width="3"/>
-    <path d="M48 75 H64 L75 54 L89 96 L100 75 H110" stroke="#FF2E9A" stroke-width="5"/>
-    <g stroke="#FF2E9A" stroke-width="4">
-      <path d="M25 0 V-18 M55 0 V-18 M95 0 V-18 M125 0 V-18"/>
-      <path d="M25 150 V168 M55 150 V168 M95 150 V168 M125 150 V168"/>
-      <path d="M0 25 H-18 M0 55 H-18 M0 95 H-18 M0 125 H-18"/>
-      <path d="M150 25 H168 M150 55 H168 M150 95 H168 M150 125 H168"/>
+    <g class="chip-shell">
+      <rect x="0" y="0" width="150" height="150" rx="26" stroke="#FF2E9A" stroke-width="4" filter="url(#glow)"/>
+      <g stroke="#FF2E9A" stroke-width="4">
+        <path d="M25 0 V-18 M55 0 V-18 M95 0 V-18 M125 0 V-18"/>
+        <path d="M25 150 V168 M55 150 V168 M95 150 V168 M125 150 V168"/>
+        <path d="M0 25 H-18 M0 55 H-18 M0 95 H-18 M0 125 H-18"/>
+        <path d="M150 25 H168 M150 55 H168 M150 95 H168 M150 125 H168"/>
+      </g>
     </g>
+    <rect x="29" y="29" width="92" height="92" rx="14" stroke="#9D4EDD" stroke-width="3"/>
+    <path class="waveform" pathLength="100" d="M48 75 H64 L75 54 L89 96 L100 75 H110" stroke="#FF2E9A" stroke-width="5"/>
   </g>
 </svg>
