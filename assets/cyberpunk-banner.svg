@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title description">
+  <title id="title">Liyuan Shi cyberpunk profile banner</title>
+  <desc id="description">A dark neon-pink banner for an electronic information engineering student focused on embedded systems and AI.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070812"/>
+      <stop offset="0.55" stop-color="#0D1020"/>
+      <stop offset="1" stop-color="#170B22"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF2E9A"/>
+      <stop offset="1" stop-color="#9D4EDD"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FF2E9A" stroke-opacity="0.09" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="24" fill="url(#background)"/>
+  <rect width="1200" height="420" rx="24" fill="url(#grid)"/>
+  <rect x="1.5" y="1.5" width="1197" height="417" rx="22.5" fill="none" stroke="url(#neon)" stroke-width="3"/>
+  <path d="M760 92 H835 L865 62 H1040" fill="none" stroke="#FF2E9A" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M760 328 H845 L885 368 H1080" fill="none" stroke="#9D4EDD" stroke-opacity="0.45" stroke-width="2"/>
+  <circle cx="835" cy="92" r="5" fill="#FF2E9A"/>
+  <circle cx="845" cy="328" r="5" fill="#9D4EDD"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="72" y="88" fill="#94A3B8" font-size="18" font-weight="600" letter-spacing="7">HELLO, WORLD — I'M</text>
+    <text x="68" y="177" fill="#FF2E9A" font-size="72" font-weight="800" letter-spacing="4" filter="url(#glow)">LIYUAN SHI</text>
+    <text x="72" y="232" fill="#F8FAFC" font-size="25" font-weight="700" letter-spacing="1.5">ELECTRONIC INFORMATION ENGINEERING</text>
+    <text x="72" y="277" fill="#E2E8F0" font-size="22" font-weight="650" letter-spacing="3">EMBEDDED SYSTEMS · AI</text>
+    <text x="72" y="326" fill="#94A3B8" font-size="17" font-weight="600" letter-spacing="2.5">SCMU / WUHAN, CHINA</text>
+    <text x="72" y="366" fill="#9D4EDD" font-size="14" font-weight="700" letter-spacing="5">LEARNING · BUILDING · EXPLORING</text>
+  </g>
+  <g transform="translate(910 150)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="150" height="150" rx="26" stroke="#FF2E9A" stroke-width="4" filter="url(#glow)"/>
+    <rect x="29" y="29" width="92" height="92" rx="14" stroke="#9D4EDD" stroke-width="3"/>
+    <path d="M48 75 H64 L75 54 L89 96 L100 75 H110" stroke="#FF2E9A" stroke-width="5"/>
+    <g stroke="#FF2E9A" stroke-width="4">
+      <path d="M25 0 V-18 M55 0 V-18 M95 0 V-18 M125 0 V-18"/>
+      <path d="M25 150 V168 M55 150 V168 M95 150 V168 M125 150 V168"/>
+      <path d="M0 25 H-18 M0 55 H-18 M0 95 H-18 M0 125 H-18"/>
+      <path d="M150 25 H168 M150 55 H168 M150 95 H168 M150 125 H168"/>
+    </g>
+  </g>
+</svg>
